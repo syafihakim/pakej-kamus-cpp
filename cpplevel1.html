@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>C++ Level 1</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-blue-50 text-gray-800">
+
+  <!-- Countdown Banner -->
+  <div id="countdown-banner" class="w-full bg-yellow-300 text-black text-center py-2 text-xs font-bold">
+    ⏳ Tawaran Terhad! Upgrade sekarang! </br>Tamat dalam <span id="countdown-timer">03:00</span>
+  </div>
+
+  <!-- Container -->
+  <div class="max-w-xl mx-auto px-4 py-8">
+    <!-- Headline -->
+    <h1 class="text-3xl font-bold text-center mb-4">
+      🎯 Nak tak belajar teknik asas yang boleh digunakan untuk buat <span class="text-red-600"> apa-apa program dalam dunia</span>?
+    </h1>
+    <p class="text-lg text-center text-gray-700 mb-8">
+      Anda dah ada <span class="font-semibold">Kamus Coding</span>...  
+      tapi sebenarnya anda boleh je buat <span class="font-semibold">10 program C++ terus!</span>
+    </p>
+
+    <!-- Main Image -->
+    <img src="cpplevel1-thumbnail.png" alt="Preview Projek"
+         class="mx-auto rounded-lg shadow-md border border-gray-200 w-full max-w-md mb-6">
+
+
+    <!-- Benefits -->
+    <ul class="space-y-4 text-lg">
+      <li>✅ 20+ Video langkah demi langkah – tak payah pening</li>
+      <li>✅ Belajar sambil buat – terus rasa yakin</li>
+      <li>✅ Siapkan 10 projek C++ - walaupun dari zero</li>
+      <li>✅ Teknik ni sebenarnya Senior Software Engineer pun guna!</li>
+    </ul>
+
+    <!-- Scarcity Box -->
+    <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mt-8 text-lg">
+      <p>🚀 Tawaran sekali je: <span class="font-bold">RM15</span> — Terus muat turun, terus boleh mula.</p>
+      <p class="text-sm mt-2 text-gray-600">Ada kat page ni je, lepas ni tak jumpa dah.</p>
+    </div>
+
+    <!-- Call to Action -->
+    <a href="https://hitpay.link/pklvco"
+       class="block bg-green-600 hover:bg-green-700 text-white text-xl font-bold py-4 rounded-lg mt-8 text-center">
+       ✅ Ya! Saya Nak C++ Level 1 RM15
+    </a>
+
+    <!-- Decline Link -->
+    <a href="https://hitpay.link/x0cppq"
+       class="block text-gray-500 text-center mt-4 underline">
+       ❌ Takpe, saya tak nak kuasai asas
+    </a>
+
+  </div>
+</body>
+
+<script>
+  // Set countdown time in seconds
+  let timeLeft = 3 * 60; // 3 minutes
+
+  const countdownEl = document.getElementById('countdown-timer');
+  const bannerEl = document.getElementById('countdown-banner');
+
+  const timer = setInterval(() => {
+    let minutes = Math.floor(timeLeft / 60);
+    let seconds = timeLeft % 60;
+
+    // Format time (add leading zero)
+    let formattedTime = 
+      (minutes < 10 ? "0" : "") + minutes + ":" + 
+      (seconds < 10 ? "0" : "") + seconds;
+
+    countdownEl.textContent = formattedTime;
+
+    if (timeLeft <= 0) {
+      clearInterval(timer);
+      bannerEl.textContent = "❌ Tawaran telah tamat!";
+    }
+
+    timeLeft--;
+  }, 1000);
+</script>
+
+</html>
